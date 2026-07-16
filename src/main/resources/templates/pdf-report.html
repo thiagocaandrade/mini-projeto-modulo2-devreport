@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <title>DevReport</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm 20mm 15mm;
+            @top-center {
+                content: "DevReport";
+                font-family: sans-serif;
+                font-size: 10pt;
+                color: #666;
+            }
+            @bottom-center {
+                content: "Página " counter(page) " de " counter(pages);
+                font-family: sans-serif;
+                font-size: 9pt;
+                color: #999;
+            }
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DejaVu Sans', Arial, sans-serif;
+            font-size: 11pt;
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #0d6efd;
+            font-size: 22pt;
+            margin: 0 0 4px 0;
+            padding-bottom: 6px;
+        }
+
+        .subtitle {
+            color: #6c757d;
+            font-size: 10pt;
+            margin: 0 0 16px 0;
+        }
+
+        .header-line {
+            border: none;
+            border-top: 3px solid #0d6efd;
+            margin: 0 0 20px 0;
+        }
+
+        h2 {
+            color: #495057;
+            font-size: 14pt;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* ---- Metric Cards ---- */
+        .card-row {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .card {
+            display: inline-block;
+            width: 22%;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 8px 6px;
+            margin-right: 3%;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .card:last-child { margin-right: 0; }
+
+        .card-label {
+            font-size: 8pt;
+            color: #6c757d;
+            margin: 0 0 4px 0;
+        }
+
+        .card-value {
+            font-size: 18pt;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .card-value.total { color: #0d6efd; }
+        .card-value.features { color: #198754; }
+        .card-value.bugs { color: #dc3545; }
+        .card-value.tasks { color: #ffc107; }
+        .card-value.info { color: #0dcaf0; }
+        .card-value.success { color: #198754; }
+
+        .card-detail {
+            font-size: 8pt;
+            color: #6c757d;
+            margin: 2px 0 0 0;
+        }
+
+        /* ---- Tables ---- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+            font-size: 9pt;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-weight: bold;
+            text-align: left;
+            padding: 6px 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        td {
+            padding: 5px 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        tr:nth-child(even) { background-color: #f8f9fa; }
+
+        /* ---- Summary Section ---- */
+        .summary-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 12px 14px;
+            margin-bottom: 12px;
+            font-size: 10pt;
+            color: #495057;
+        }
+
+        .summary-box em {
+            color: #adb5bd;
+        }
+
+        /* ---- Info row ---- */
+        .info-row {
+            font-size: 9pt;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+        .info-row strong {
+            color: #495057;
+        }
+
+        /* ---- Footer ---- */
+        .footer {
+            margin-top: 30px;
+            padding-top: 8px;
+            border-top: 1px solid #dee2e6;
+            font-size: 7pt;
+            color: #adb5bd;
+            text-align: center;
+        }
+
+        /* ---- PR Size Distribution Table ---- */
+        .size-table {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DevReport</h1>
+    <p class="subtitle">Relatório de entregas baseado em issues do GitHub</p>
+    <hr class="header-line"/>
+
+    <!-- Period Info -->
+    <p class="info-row">
+        <strong>Período:</strong> <span th:text="${startDateFormatted}">01/01/2026</span>
+        a <span th:text="${endDateFormatted}">31/01/2026</span>
+        &#160;|&#160;
+        <strong>Repositórios analisados:</strong> <span th:text="${report.repositoriesCount}">1</span>
+    </p>
+
+    <!-- ===== METRICS CARDS ===== -->
+    <div th:if="${report.metrics != null}">
+        <h2>Métricas de Issues</h2>
+        <div class="card-row">
+            <div class="card">
+                <p class="card-label">Total de Entregas</p>
+                <p class="card-value total" th:text="${report.metrics.total}">0</p>
+            </div>
+            <div class="card">
+                <p class="card-label">Features</p>
+                <p class="card-value features" th:text="${report.metrics.features}">0</p>
+            </div>
+            <div class="card">
+                <p class="card-label">Bugs</p>
+                <p class="card-value bugs" th:text="${report.metrics.bugs}">0</p>
+            </div>
+            <div class="card">
+                <p class="card-label">Tasks</p>
+                <p class="card-value tasks" th:text="${report.metrics.tasks}">0</p>
+            </div>
+        </div>
+
+        <!-- Quick Win Metrics -->
+        <div th:if="${report.metrics != null and report.metrics.throughputPerWeek > 0}">
+            <h2>Indicadores de Performance</h2>
+            <div class="card-row">
+                <div class="card">
+                    <p class="card-label">Throughput Semanal</p>
+                    <p class="card-value info" th:text="${#numbers.formatDecimal(report.metrics.throughputPerWeek, 1, 1)}">0</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">Velocidade Média</p>
+                    <p class="card-value success" th:text="${#numbers.formatDecimal(report.metrics.avgResolutionDays, 1, 1) + 'd'}">0d</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">Densidade de Bugs</p>
+                    <p class="card-value" th:text="${#numbers.formatDecimal(report.metrics.bugDensityPercent, 1, 1) + '%'}"
+                       th:style="${report.metrics.bugDensityPercent > 25} ? 'color: #dc3545;' : 'color: #198754;'">0%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PR ANALYTICS ===== -->
+    <div th:if="${prMetrics != null and prMetrics.totalMerged > 0}">
+        <h2>PR Analytics</h2>
+        <div class="card-row">
+            <div class="card">
+                <p class="card-label">PRs Merged</p>
+                <p class="card-value info" th:text="${prMetrics.totalMerged}">0</p>
+            </div>
+            <div class="card">
+                <p class="card-label">Linhas Alteradas</p>
+                <p class="card-value total" th:text="${totalChangedLines}">0</p>
+                <p class="card-detail">
+                    +<span th:text="${prMetrics.totalAdditions}">0</span>
+                    / -<span th:text="${prMetrics.totalDeletions}">0</span>
+                </p>
+            </div>
+            <div class="card">
+                <p class="card-label">Tempo Médio até Merge</p>
+                <p class="card-value success" th:text="${#numbers.formatDecimal(prMetrics.averageTimeToMerge, 1, 1) + 'h'}">0h</p>
+            </div>
+            <div class="card">
+                <p class="card-label">Revisores Distintos</p>
+                <p class="card-value tasks" th:text="${prMetrics.uniqueReviewers}">0</p>
+            </div>
+            <div class="card">
+                <p class="card-label">Cobertura Review</p>
+                <p class="card-value success" th:text="${#numbers.formatDecimal(prMetrics.reviewCoveragePercent, 1, 1) + '%'}">0%</p>
+            </div>
+        </div>
+
+        <!-- PR Size Distribution -->
+        <div th:if="${prMetrics.prSizeDistribution != null and !prMetrics.prSizeDistribution.isEmpty()}">
+            <h2>Distribuição por Tamanho de PR</h2>
+            <table class="size-table">
+                <thead>
+                    <tr>
+                        <th>Tamanho</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="entry : ${prMetrics.prSizeDistribution}">
+                        <td th:text="${entry.key}">Small</td>
+                        <td th:text="${entry.value}">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===== REPOSITORY SUMMARIES ===== -->
+    <div th:if="${repositorySummaries != null and !repositorySummaries.isEmpty()}">
+        <h2>Resumo por Repositório</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Repositório</th>
+                    <th>Issues</th>
+                    <th>PRs</th>
+                    <th>Additions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="rs : ${repositorySummaries}">
+                    <td th:text="${rs.name}">repo</td>
+                    <td th:text="${rs.totalIssues}">0</td>
+                    <td th:text="${rs.totalPRs}">0</td>
+                    <td th:text="${rs.totalAdditions}">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ===== INTELLIGENT SUMMARY ===== -->
+    <div th:if="${summaryContent != null and !summaryContent.isEmpty()}">
+        <h2>Resumo Inteligente</h2>
+        <div class="summary-box" th:text="${summaryContent}">
+            Resumo gerado por IA...
+        </div>
+    </div>
+
+    <div th:if="${summaryContent == null or summaryContent.isEmpty()}">
+        <h2>Resumo Inteligente</h2>
+        <div class="summary-box">
+            <em>O resumo inteligente não pôde ser gerado, mas as métricas estão disponíveis.</em>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        DevReport — Gerado em <span th:text="${#temporals.format(#temporals.createNow(), 'dd/MM/yyyy HH:mm')}">01/01/2026 12:00</span>
+    </div>
+
+</body>
+</html>
