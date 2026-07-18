@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -10,13 +10,13 @@
     <div class="container py-4">
         <header class="mb-4">
             <h1 class="display-6 text-primary">DevReport</h1>
-            <p class="text-muted">Relatório de entregas baseado em issues do GitHub</p>
+            <p class="text-muted">Relat├│rio de entregas baseado em issues do GitHub</p>
         </header>
 
-        <!-- Formulário de Período -->
+        <!-- Formul├írio de Per├¡odo -->
         <div class="card shadow-sm mb-4">
             <div class="card-body">
-                <h5 class="card-title">Período de Análise</h5>
+                <h5 class="card-title">Per├¡odo de An├ílise</h5>
                 <form th:action="@{/}" method="post" th:object="${request}" class="row g-3 align-items-end">
                     <div class="col-md-3">
                         <label for="startDate" class="form-label">Data Inicial</label>
@@ -31,7 +31,7 @@
                         <div class="invalid-feedback" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}">Erro</div>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label">Repositórios</label>
+                        <label class="form-label">Reposit├│rios</label>
                         <div class="border rounded p-2" style="max-height: 120px; overflow-y: auto;">
                             <th:block th:each="repo : ${availableRepos}">
                                 <div class="form-check form-check-inline">
@@ -42,12 +42,12 @@
                                 </div>
                             </th:block>
                             <div th:if="${availableRepos == null or availableRepos.isEmpty()}" class="text-muted small">
-                                Repositório padrão será usado: <strong th:text="${defaultRepo}">owner/repo</strong>
+                                Reposit├│rio padr├úo ser├í usado: <strong th:text="${defaultRepo}">owner/repo</strong>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary w-100">Gerar Relatório</button>
+                        <button type="submit" class="btn btn-primary w-100">Gerar Relat├│rio</button>
                     </div>
                 </form>
             </div>
@@ -58,7 +58,7 @@
             <p class="mb-0" th:text="${dashboard.message}">Mensagem</p>
         </div>
 
-        <!-- Cards de Métricas -->
+        <!-- Cards de M├⌐tricas -->
         <div th:if="${dashboard != null and dashboard.metrics != null}" class="row g-3 mb-4">
             <div class="col-6 col-md-3">
                 <div class="card shadow-sm text-center border-primary">
@@ -99,7 +99,7 @@
             <div class="col-6 col-md-4">
                 <div class="card shadow-sm text-center border-info h-100">
                     <div class="card-body">
-                        <h6 class="card-title text-muted">📊 Throughput Semanal</h6>
+                        <h6 class="card-title text-muted">≡ƒôè Throughput Semanal</h6>
                         <p class="display-6 text-info mb-0" th:text="${#numbers.formatDecimal(dashboard.metrics.throughputPerWeek, 1, 1)}">0</p>
                         <small class="text-muted">entregas por semana</small>
                     </div>
@@ -108,7 +108,7 @@
             <div class="col-6 col-md-4">
                 <div class="card shadow-sm text-center border-success h-100">
                     <div class="card-body">
-                        <h6 class="card-title text-muted">⏱️ Velocidade Média</h6>
+                        <h6 class="card-title text-muted">ΓÅ▒∩╕Å Velocidade M├⌐dia</h6>
                         <p class="display-6 text-success mb-0" th:text="${#numbers.formatDecimal(dashboard.metrics.avgResolutionDays, 1, 1)}">0</p>
                         <small class="text-muted">dias para resolver</small>
                     </div>
@@ -118,7 +118,7 @@
                 <div class="card shadow-sm text-center h-100"
                      th:classappend="${dashboard.metrics.bugDensityPercent > 25} ? 'border-danger' : 'border-success'">
                     <div class="card-body">
-                        <h6 class="card-title text-muted">🐛 Densidade de Bugs</h6>
+                        <h6 class="card-title text-muted">≡ƒÉ¢ Densidade de Bugs</h6>
                         <p class="display-6 mb-0"
                            th:text="${#numbers.formatDecimal(dashboard.metrics.bugDensityPercent, 1, 1) + '%'}"
                            th:classappend="${dashboard.metrics.bugDensityPercent > 25} ? 'text-danger' : 'text-success'">0%</p>
@@ -128,9 +128,9 @@
             </div>
         </div>
 
-        <!-- Indicador de Repositórios -->
+        <!-- Indicador de Reposit├│rios -->
         <div th:if="${dashboard != null and dashboard.repositoriesCount > 0}" class="alert alert-secondary mb-4" role="alert">
-            <strong th:text="${dashboard.repositoriesCount}">0</strong> repositório(s) analisado(s) neste período.
+            <strong th:text="${dashboard.repositoriesCount}">0</strong> reposit├│rio(s) analisado(s) neste per├¡odo.
         </div>
 
         <!-- PR Analytics -->
@@ -162,7 +162,7 @@
                 <div class="col-6 col-md-3">
                     <div class="card shadow-sm text-center border-success">
                         <div class="card-body">
-                            <h6 class="card-title text-muted">Tempo Médio até Merge</h6>
+                            <h6 class="card-title text-muted">Tempo M├⌐dio at├⌐ Merge</h6>
                             <p class="display-6 text-success mb-0" th:text="${#numbers.formatDecimal(dashboard.prMetrics.averageTimeToMerge, 1, 1) + 'h'}">0h</p>
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                 <div class="col-6 col-md-3">
                     <div class="card shadow-sm text-center border-success">
                         <div class="card-body">
-                            <h6 class="card-title text-muted">✅ Cobertura de Review</h6>
+                            <h6 class="card-title text-muted">Γ£à Cobertura de Review</h6>
                             <p class="display-6 text-success mb-0" th:text="${#numbers.formatDecimal(dashboard.prMetrics.reviewCoveragePercent, 1, 1) + '%'}">0%</p>
                         </div>
                     </div>
@@ -190,7 +190,7 @@
                 <div class="col-md-6">
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Distribuição por Tamanho de PR</h5>
+                            <h5 class="card-title">Distribui├º├úo por Tamanho de PR</h5>
                             <canvas id="prSizeChart"></canvas>
                         </div>
                     </div>
@@ -198,10 +198,10 @@
                 <div class="col-md-6">
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Resumo por Repositório</h5>
+                            <h5 class="card-title">Resumo por Reposit├│rio</h5>
                             <div class="table-responsive">
                                 <table class="table table-sm" th:if="${dashboard.repositorySummaries != null and !dashboard.repositorySummaries.isEmpty()}">
-                                    <thead><tr><th>Repositório</th><th>Issues</th><th>PRs</th><th>Additions</th></tr></thead>
+                                    <thead><tr><th>Reposit├│rio</th><th>Issues</th><th>PRs</th><th>Additions</th></tr></thead>
                                     <tbody>
                                         <tr th:each="rs : ${dashboard.repositorySummaries}">
                                             <td th:text="${rs.name}">repo</td>
@@ -211,7 +211,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <p th:unless="${dashboard.repositorySummaries != null and !dashboard.repositorySummaries.isEmpty()}" class="text-muted">Nenhum dado de repositório disponível.</p>
+                                <p th:unless="${dashboard.repositorySummaries != null and !dashboard.repositorySummaries.isEmpty()}" class="text-muted">Nenhum dado de reposit├│rio dispon├¡vel.</p>
                             </div>
                         </div>
                     </div>
@@ -219,12 +219,12 @@
             </div>
         </div>
 
-        <!-- Gráficos -->
+        <!-- Gr├íficos -->
         <div th:if="${dashboard != null and dashboard.metrics != null}" class="row g-3 mb-4">
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Entregas por Período</h5>
+                        <h5 class="card-title">Entregas por Per├¡odo</h5>
                         <canvas id="periodChart"></canvas>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Distribuição por Categoria</h5>
+                        <h5 class="card-title">Distribui├º├úo por Categoria</h5>
                         <canvas id="categoryChart"></canvas>
                     </div>
                 </div>
@@ -247,15 +247,15 @@
             </div>
         </div>
 
-        <!-- Resumo Indisponível -->
+        <!-- Resumo Indispon├¡vel -->
         <div th:if="${dashboard != null and dashboard.metrics != null and (dashboard.summary == null or dashboard.summary.isEmpty())}" class="card shadow-sm mb-4 border-secondary">
             <div class="card-body text-muted">
                 <h5 class="card-title">Resumo Inteligente</h5>
-                <p class="card-text"><em>O resumo inteligente não pôde ser gerado, mas as métricas estão disponíveis.</em></p>
+                <p class="card-text"><em>O resumo inteligente n├úo p├┤de ser gerado, mas as m├⌐tricas est├úo dispon├¡veis.</em></p>
             </div>
         </div>
 
-        <!-- Botão PDF -->
+        <!-- Bot├úo PDF -->
         <div th:if="${dashboard != null and dashboard.metrics != null}" class="text-center mb-4">
             <form th:action="@{/dashboard/export}" method="get" class="d-inline">
                 <input type="hidden" name="start" th:value="${request.startDate}">
@@ -264,7 +264,7 @@
                     <input type="hidden" name="repositories" th:value="${repo}">
                 </th:block>
                 <button type="submit" class="btn btn-outline-secondary">
-                    📄 Baixar Relatório PDF
+                    ≡ƒôä Baixar Relat├│rio PDF
                 </button>
             </form>
         </div>
