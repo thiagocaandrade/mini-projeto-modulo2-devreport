@@ -1,0 +1,1278 @@
+[
+    {
+        "id":  "1001",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-01T17:00:00Z",
+        "number":  1001,
+        "created_at":  "2026-07-01T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-001\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-001 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-001 |\n| **Ã‰pico** | EP01 - Configuração e Base Arquitetural |\n\n### DescriÃ§Ã£o\nCriar ou ajustar a base do projeto Spring Boot usando Java 21 e Maven.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-001\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-001] Criar projeto Spring Boot com Maven",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1002",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-01T17:00:00Z",
+        "number":  1002,
+        "created_at":  "2026-07-01T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-002\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-002 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-001 |\n| **Ã‰pico** | EP01 - Configuração e Base Arquitetural |\n\n### DescriÃ§Ã£o\nAdicionar dependências necessárias para Spring Web, Thymeleaf, validação, Spring AI, LangGraph4j, cliente HTTP, testes e suporte ao frontend.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-001\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-002] Configurar dependências principais",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1003",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-01T17:00:00Z",
+        "number":  1003,
+        "created_at":  "2026-07-01T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-003\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-003 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-001 |\n| **Ã‰pico** | EP01 - Configuração e Base Arquitetural |\n\n### DescriÃ§Ã£o\nCriar pacotes config, controller, application, domain, infrastructure, github, metrics, dashboard, ai, agent e shared.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-001\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-003] Criar estrutura de pacotes",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1004",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-02T17:00:00Z",
+        "number":  1004,
+        "created_at":  "2026-07-02T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-004\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-004 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-001 |\n| **Ã‰pico** | EP01 - Configuração e Base Arquitetural |\n\n### DescriÃ§Ã£o\nCriar AnalysisRequest, Issue, Metric, DashboardReport, Insight e modelos auxiliares para dados de gráficos.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-001\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-004] Criar modelos de domínio",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1005",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-02T17:00:00Z",
+        "number":  1005,
+        "created_at":  "2026-07-02T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-005\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-005 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-001 |\n| **Ã‰pico** | EP01 - Configuração e Base Arquitetural |\n\n### DescriÃ§Ã£o\nCriar AnalysisRequestDTO, IssueDTO, MetricDTO, DashboardDTO e InsightDTO.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-001\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-005] Criar DTOs principais",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1006",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-02T17:00:00Z",
+        "number":  1006,
+        "created_at":  "2026-07-02T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-006\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-006 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-002 |\n| **Ã‰pico** | EP01 - Configuração e Base Arquitetural |\n\n### DescriÃ§Ã£o\nCriar propriedades para token, owner, repository e project em application.yml ou configuração equivalente.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-002\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-006] Configurar propriedades do GitHub",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1007",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-03T17:00:00Z",
+        "number":  1007,
+        "created_at":  "2026-07-03T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-007\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-007 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-002 |\n| **Ã‰pico** | EP02 - Entrada de Análise |\n\n### DescriÃ§Ã£o\nCriar view Thymeleaf inicial com campos startDate e endDate.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-002\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-007] Criar tela/formulário de período",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1008",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-03T17:00:00Z",
+        "number":  1008,
+        "created_at":  "2026-07-03T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-008\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-008 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-002 |\n| **Ã‰pico** | EP02 - Entrada de Análise |\n\n### DescriÃ§Ã£o\nValidar campos obrigatórios e impedir data final anterior à inicial.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-002\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-008] Validar entrada de período",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1009",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-03T17:00:00Z",
+        "number":  1009,
+        "created_at":  "2026-07-03T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-009\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-009 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-002 |\n| **Ã‰pico** | EP02 - Entrada de Análise |\n\n### DescriÃ§Ã£o\nCriar DashboardController para exibir tela inicial e receber solicitação de análise.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-002\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-009] Criar controller do dashboard",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1010",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-04T17:00:00Z",
+        "number":  1010,
+        "created_at":  "2026-07-04T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-010\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-010 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-003 |\n| **Ã‰pico** | EP03 - Integração GitHub |\n\n### DescriÃ§Ã£o\nCriar componente de infraestrutura para chamadas à GitHub REST API usando token configurado.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-003\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-010] Implementar cliente HTTP do GitHub",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1011",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-04T17:00:00Z",
+        "number":  1011,
+        "created_at":  "2026-07-04T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-011\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-011 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-003 |\n| **Ã‰pico** | EP03 - Integração GitHub |\n\n### DescriÃ§Ã£o\nImplementar serviço para buscar issues concluídas do repositório/projeto configurado.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-003\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-011] Implementar consulta de issues concluídas",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1012",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-04T17:00:00Z",
+        "number":  1012,
+        "created_at":  "2026-07-04T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-012\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-012 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-003 |\n| **Ã‰pico** | EP03 - Integração GitHub |\n\n### DescriÃ§Ã£o\nConverter resposta da API GitHub para o modelo Issue do domínio.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-003\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-012] Implementar mapper de GitHub para domínio",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1013",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-05T17:00:00Z",
+        "number":  1013,
+        "created_at":  "2026-07-05T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-013\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-013 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-003 |\n| **Ã‰pico** | EP03 - Integração GitHub |\n\n### DescriÃ§Ã£o\nFiltrar issues por closedAt dentro de startDate e endDate.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-003\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-013] Implementar filtro por período",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1014",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-05T17:00:00Z",
+        "number":  1014,
+        "created_at":  "2026-07-05T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-014\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-014 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-003 |\n| **Ã‰pico** | EP08 - Tratamento de Erros |\n\n### DescriÃ§Ã£o\nPadronizar erros de autenticação, indisponibilidade e falhas de comunicação com GitHub.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-003\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-014] Tratar erros básicos da integração GitHub",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1015",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-05T17:00:00Z",
+        "number":  1015,
+        "created_at":  "2026-07-05T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-015\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-015 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-004 |\n| **Ã‰pico** | EP04 - Motor de Métricas |\n\n### DescriÃ§Ã£o\nClassificar cada issue como Feature, Bug ou Task a partir de labels, com fallback para Task.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-004\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-015] Implementar classificador de issues",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1016",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-06T17:00:00Z",
+        "number":  1016,
+        "created_at":  "2026-07-06T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-016\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-016 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-004 |\n| **Ã‰pico** | EP04 - Motor de Métricas |\n\n### DescriÃ§Ã£o\nCalcular total, features, bugs e tasks a partir da lista classificada.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-004\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-016] Implementar cálculo de métricas consolidadas",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1017",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-06T17:00:00Z",
+        "number":  1017,
+        "created_at":  "2026-07-06T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-017\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-017 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-004 |\n| **Ã‰pico** | EP04 - Motor de Métricas |\n\n### DescriÃ§Ã£o\nAgregar entregas por período para consumo pelo Chart.js.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-004\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-017] Implementar dados de gráfico por período",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1018",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-06T17:00:00Z",
+        "number":  1018,
+        "created_at":  "2026-07-06T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-018\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-018 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-004 |\n| **Ã‰pico** | EP04 - Motor de Métricas |\n\n### DescriÃ§Ã£o\nCriar estrutura de dados para gráfico de distribuição por Feature, Bug e Task.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-004\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-018] Implementar dados de gráfico por categoria",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1019",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-07T17:00:00Z",
+        "number":  1019,
+        "created_at":  "2026-07-07T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-019\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-019 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-005 |\n| **Ã‰pico** | EP05 - Orquestração com LangGraph4j |\n\n### DescriÃ§Ã£o\nCriar estado compartilhado do agente com datas, issues, métricas, resumo, dashboard e erros.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-005\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-019] Criar estado AnalysisState",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1020",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-07T17:00:00Z",
+        "number":  1020,
+        "created_at":  "2026-07-07T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-020\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-020 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-005 |\n| **Ã‰pico** | EP05 - Orquestração com LangGraph4j |\n\n### DescriÃ§Ã£o\nImplementar StartNode, ValidateRequestNode, FetchGitHubDataNode, CalculateMetricsNode, GenerateInsightsNode e BuildDashboardNode.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-005\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-020] Implementar nodes do LangGraph4j",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1021",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-07T17:00:00Z",
+        "number":  1021,
+        "created_at":  "2026-07-07T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-021\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-021 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-005 |\n| **Ã‰pico** | EP05 - Orquestração com LangGraph4j |\n\n### DescriÃ§Ã£o\nConectar nodes no fluxo LangGraph4j na ordem definida pela Specification.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-005\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-021] Montar fluxo principal do agente",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1022",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-08T17:00:00Z",
+        "number":  1022,
+        "created_at":  "2026-07-08T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-022\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-022 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-005 |\n| **Ã‰pico** | EP05 - Orquestração com LangGraph4j |\n\n### DescriÃ§Ã£o\nFazer DashboardController acionar o agente e receber DashboardReport.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-005\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-022] Integrar controller com agente",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1023",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-08T17:00:00Z",
+        "number":  1023,
+        "created_at":  "2026-07-08T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-023\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-023 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-006 |\n| **Ã‰pico** | EP07 - Dashboard Web |\n\n### DescriÃ§Ã£o\nImplementar DashboardService para consolidar métricas, gráficos, resumo e mensagens.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-006\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-023] Criar serviço de montagem do DashboardReport",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1024",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-08T17:00:00Z",
+        "number":  1024,
+        "created_at":  "2026-07-08T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-024\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-024 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-006 |\n| **Ã‰pico** | EP07 - Dashboard Web |\n\n### DescriÃ§Ã£o\nCriar template base do dashboard com Bootstrap 5.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-006\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-024] Criar layout base Thymeleaf",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1025",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-09T17:00:00Z",
+        "number":  1025,
+        "created_at":  "2026-07-09T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-025\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-025 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-006 |\n| **Ã‰pico** | EP07 - Dashboard Web |\n\n### DescriÃ§Ã£o\nExibir cards de Total de Entregas, Features, Bugs e Tasks.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-006\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-025] Implementar cards de métricas",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1026",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-09T17:00:00Z",
+        "number":  1026,
+        "created_at":  "2026-07-09T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-026\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-026 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-006 |\n| **Ã‰pico** | EP07 - Dashboard Web |\n\n### DescriÃ§Ã£o\nAdicionar Chart.js ao template e preparar scripts para renderização.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-006\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-026] Integrar Chart.js",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1027",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-09T17:00:00Z",
+        "number":  1027,
+        "created_at":  "2026-07-09T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-027\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-027 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-006 |\n| **Ã‰pico** | EP07 - Dashboard Web |\n\n### DescriÃ§Ã£o\nExibir gráfico de entregas por período com dados calculados pelo backend.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-006\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-027] Renderizar gráfico de entregas por período",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1028",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-10T17:00:00Z",
+        "number":  1028,
+        "created_at":  "2026-07-10T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-028\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-028 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-006 |\n| **Ã‰pico** | EP07 - Dashboard Web |\n\n### DescriÃ§Ã£o\nExibir gráfico de distribuição por Feature, Bug e Task.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-006\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-028] Renderizar gráfico de distribuição por categoria",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1029",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-10T17:00:00Z",
+        "number":  1029,
+        "created_at":  "2026-07-10T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-029\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-029 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-006 |\n| **Ã‰pico** | EP07 - Dashboard Web |\n\n### DescriÃ§Ã£o\nCriar área no dashboard para exibir insight gerado por IA ou mensagem de ausência controlada.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-006\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-029] Implementar área de resumo inteligente",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1030",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-10T17:00:00Z",
+        "number":  1030,
+        "created_at":  "2026-07-10T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-030\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-030 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-007 |\n| **Ã‰pico** | EP06 - Insights com IA |\n\n### DescriÃ§Ã£o\nConfigurar dependências, propriedades e client do Spring AI para chamada ao modelo OpenAI GPT.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-007\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-030] Configurar Spring AI/OpenAI",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1031",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-11T17:00:00Z",
+        "number":  1031,
+        "created_at":  "2026-07-11T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-031\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-031 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-007 |\n| **Ã‰pico** | EP06 - Insights com IA |\n\n### DescriÃ§Ã£o\nSelecionar subconjunto representativo de issues para alimentar o prompt.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-007\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-031] Implementar seleção de principais entregas",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1032",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-11T17:00:00Z",
+        "number":  1032,
+        "created_at":  "2026-07-11T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-032\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-032 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-007 |\n| **Ã‰pico** | EP06 - Insights com IA |\n\n### DescriÃ§Ã£o\nCriar InsightService com prompt baseado em métricas e principais entregas.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-007\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-032] Implementar prompt e InsightService",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1033",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-11T17:00:00Z",
+        "number":  1033,
+        "created_at":  "2026-07-11T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-033\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-033 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-007 |\n| **Ã‰pico** | EP06 - Insights com IA |\n\n### DescriÃ§Ã£o\nConectar InsightService ao GenerateInsightsNode e exibir resultado no dashboard.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-007\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-033] Integrar insight ao fluxo e dashboard",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1034",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-12T17:00:00Z",
+        "number":  1034,
+        "created_at":  "2026-07-12T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-034\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-034 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-008 |\n| **Ã‰pico** | EP08 - Tratamento de Erros |\n\n### DescriÃ§Ã£o\nExibir estado vazio quando não houver issues concluídas no período.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-008\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-034] Implementar estado sem entregas",
+        "labels":  [
+                       {
+                           "name":  "bug",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1035",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-12T17:00:00Z",
+        "number":  1035,
+        "created_at":  "2026-07-12T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-035\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-035 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-008 |\n| **Ã‰pico** | EP08 - Tratamento de Erros |\n\n### DescriÃ§Ã£o\nExibir mensagem amigável quando GitHub estiver indisponível, token inválido ou configuração incorreta.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-008\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-035] Implementar tratamento de falha GitHub",
+        "labels":  [
+                       {
+                           "name":  "bug",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1036",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-12T17:00:00Z",
+        "number":  1036,
+        "created_at":  "2026-07-12T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-036\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-036 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-008 |\n| **Ã‰pico** | EP08 - Tratamento de Erros |\n\n### DescriÃ§Ã£o\nTornar erro da IA não bloqueante e exibir dashboard com métricas.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-008\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-036] Implementar tratamento de falha IA",
+        "labels":  [
+                       {
+                           "name":  "bug",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1037",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-13T17:00:00Z",
+        "number":  1037,
+        "created_at":  "2026-07-13T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-037\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-037 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-008 |\n| **Ã‰pico** | EP08 - Tratamento de Erros |\n\n### DescriÃ§Ã£o\nRegistrar início/fim da análise, consulta GitHub, cálculo de métricas, IA e tempo total.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-008\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-037] Implementar logging do fluxo principal",
+        "labels":  [
+                       {
+                           "name":  "bug",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1038",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-13T17:00:00Z",
+        "number":  1038,
+        "created_at":  "2026-07-13T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-038\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-038 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-009 |\n| **Ã‰pico** | EP09 - Testes e Qualidade |\n\n### DescriÃ§Ã£o\nTestar totalização, categorias, lista vazia e consistência da soma.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-009\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-038] Criar testes unitários de métricas",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1039",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-13T17:00:00Z",
+        "number":  1039,
+        "created_at":  "2026-07-13T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-039\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-039 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-009 |\n| **Ã‰pico** | EP09 - Testes e Qualidade |\n\n### DescriÃ§Ã£o\nTestar conversão de dados GitHub para domínio e categorização.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-009\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-039] Criar testes de mapper e classificação",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1040",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-14T17:00:00Z",
+        "number":  1040,
+        "created_at":  "2026-07-14T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-040\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-040 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-009 |\n| **Ã‰pico** | EP09 - Testes e Qualidade |\n\n### DescriÃ§Ã£o\nTestar montagem do DashboardReport e comportamento do InsightService com sucesso e falha.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-009\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-040] Criar testes de dashboard e insight",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1041",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-14T17:00:00Z",
+        "number":  1041,
+        "created_at":  "2026-07-14T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-041\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-041 |\n| **Prioridade** | P2 |\n| **Specification** | SPEC-009 |\n| **Ã‰pico** | EP09 - Testes e Qualidade |\n\n### DescriÃ§Ã£o\nCriar teste do fluxo principal com GitHub e IA simulados.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-009\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-041] Criar teste de integração do fluxo principal",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1042",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-14T17:00:00Z",
+        "number":  1042,
+        "created_at":  "2026-07-14T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-042\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-042 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-010 |\n| **Ã‰pico** | EP10 - Multi-Repo Support |\n\n### DescriÃ§Ã£o\nCriar endpoint GET /api/repositories no GitHubClient para listar repositórios do owner configurado.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-010\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-042] Implementar endpoint de listagem de repositórios",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1043",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-02T17:00:00Z",
+        "number":  1043,
+        "created_at":  "2026-07-02T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-043\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-043 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-010 |\n| **Ã‰pico** | EP10 - Multi-Repo Support |\n\n### DescriÃ§Ã£o\nAdicionar campo multi-select ou checkboxes no formulário Thymeleaf, populado dinamicamente.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-010\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-043] Implementar seleção multi-repo no formulário",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1044",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-02T17:00:00Z",
+        "number":  1044,
+        "created_at":  "2026-07-02T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-044\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-044 |\n| **Prioridade** | P0 |\n| **Specification** | SPEC-010 |\n| **Ã‰pico** | EP10 - Multi-Repo Support |\n\n### DescriÃ§Ã£o\nModificar GitHubClient para aceitar lista de repositórios e iterar sobre cada um nas consultas.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-010\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-044] Adaptar GitHubClient para multi-repo",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1045",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-02T17:00:00Z",
+        "number":  1045,
+        "created_at":  "2026-07-02T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-045\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-045 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-010 |\n| **Ã‰pico** | EP10 - Multi-Repo Support |\n\n### DescriÃ§Ã£o\nGarantir que cada Issue e PullRequest contenha o campo repository identificando sua origem.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-010\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-045] Implementar agregação e identificação de origem",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1046",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-03T17:00:00Z",
+        "number":  1046,
+        "created_at":  "2026-07-03T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-046\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-046 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-010 |\n| **Ã‰pico** | EP10 - Multi-Repo Support |\n\n### DescriÃ§Ã£o\nCalcular indicadores por repositório: total de issues, total de PRs e total de additions.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-010\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-046] Implementar cálculo de RepositorySummary",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1047",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-03T17:00:00Z",
+        "number":  1047,
+        "created_at":  "2026-07-03T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-047\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-047 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-011 |\n| **Ã‰pico** | EP11 - PR Analytics |\n\n### DescriÃ§Ã£o\nImplementar consulta à GitHub REST API para recuperar PRs merged do período.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-011\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-047] Implementar consulta de PRs merged",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1048",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-03T17:00:00Z",
+        "number":  1048,
+        "created_at":  "2026-07-03T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-048\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-048 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-011 |\n| **Ã‰pico** | EP11 - PR Analytics |\n\n### DescriÃ§Ã£o\nCriar mapper para converter resposta da API GitHub de PRs para o modelo PullRequest.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-011\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-048] Implementar mapper de PRs",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1049",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-04T17:00:00Z",
+        "number":  1049,
+        "created_at":  "2026-07-04T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-049\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-049 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-011 |\n| **Ã‰pico** | EP11 - PR Analytics |\n\n### DescriÃ§Ã£o\nImplementar serviço para calcular métricas de PR: totalMerged, additions, timeToMerge, reviewers, prSizeDistribution.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-011\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-049] Implementar PRMetricsService",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1050",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-04T17:00:00Z",
+        "number":  1050,
+        "created_at":  "2026-07-04T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-050\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-050 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-011 |\n| **Ã‰pico** | EP11 - PR Analytics |\n\n### DescriÃ§Ã£o\nAdicionar seção PR Analytics no dashboard Thymeleaf com cards de PRs merged, linhas alteradas, tempo até merge e revisores.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-011\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-050] Implementar seção PR Analytics no dashboard",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1051",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-04T17:00:00Z",
+        "number":  1051,
+        "created_at":  "2026-07-04T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-051\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-051 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-011 |\n| **Ã‰pico** | EP11 - PR Analytics |\n\n### DescriÃ§Ã£o\nAdicionar gráfico Chart.js de distribuição por tamanho de PR (pequeno/médio/grande).\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-011\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-051] Implementar gráfico de distribuição de PRs",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1052",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-05T17:00:00Z",
+        "number":  1052,
+        "created_at":  "2026-07-05T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-052\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-052 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-011 |\n| **Ã‰pico** | EP11 - PR Analytics |\n\n### DescriÃ§Ã£o\nModificar o prompt da IA para incluir métricas de PR e contexto multi-repo.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-011\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-052] Atualizar InsightService com contexto multi-repo e PR",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1053",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-05T17:00:00Z",
+        "number":  1053,
+        "created_at":  "2026-07-05T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-053\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-053 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-012 |\n| **Ã‰pico** | EP12 - Exportação PDF |\n\n### DescriÃ§Ã£o\nCriar endpoint GET /dashboard/export que aceita período e repositórios e retorna PDF.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-012\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-053] Implementar endpoint de exportação PDF",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1054",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-05T17:00:00Z",
+        "number":  1054,
+        "created_at":  "2026-07-05T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-054\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-054 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-012 |\n| **Ã‰pico** | EP12 - Exportação PDF |\n\n### DescriÃ§Ã£o\nCriar template específico para PDF com CSS @media print, dimensões A4, gráficos SVG inline.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-012\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-054] Criar template Thymeleaf otimizado para PDF",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1055",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  "2026-07-06T17:00:00Z",
+        "number":  1055,
+        "created_at":  "2026-07-06T08:00:00Z",
+        "state":  "closed",
+        "body":  "## TASK-055\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-055 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-012 |\n| **Ã‰pico** | EP12 - Exportação PDF |\n\n### DescriÃ§Ã£o\nImplementar serviço que renderiza template Thymeleaf e converte para PDF usando Flying Saucer.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-012\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-055] Implementar conversão HTML para PDF",
+        "labels":  [
+                       {
+                           "name":  "feature",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1056",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  null,
+        "number":  1056,
+        "created_at":  "2026-07-06T08:00:00Z",
+        "state":  "open",
+        "body":  "## TASK-056\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-056 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-010 |\n| **Ã‰pico** | EP09 - Testes e Qualidade |\n\n### DescriÃ§Ã£o\nTestar que falha em um repositório durante coleta multi-repo não interrompe a análise dos demais.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-010\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-056] Implementar teste de falha em um repositório",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1057",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  null,
+        "number":  1057,
+        "created_at":  "2026-07-06T08:00:00Z",
+        "state":  "open",
+        "body":  "## TASK-057\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-057 |\n| **Prioridade** | P1 |\n| **Specification** | SPEC-011 |\n| **Ã‰pico** | EP09 - Testes e Qualidade |\n\n### DescriÃ§Ã£o\nTestar cálculo de PR metrics: merged total, additions/deletions, tempo até merge, revisores e distribuição de tamanho.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-011\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-057] Criar testes para PRMetricsService",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    },
+    {
+        "id":  "1058",
+        "assignee":  {
+                         "login":  "thiagocaandrade"
+                     },
+        "repository":  "IA-para-DEVs-SCTEC-T2/mini-projeto-logpulseai",
+        "closed_at":  null,
+        "number":  1058,
+        "created_at":  "2026-07-07T08:00:00Z",
+        "state":  "open",
+        "body":  "## TASK-058\n\n| Campo | Valor |\n|---|---|\n| **ID** | TASK-058 |\n| **Prioridade** | P2 |\n| **Specification** | SPEC-009 |\n| **Ã‰pico** | EP09 - Testes e Qualidade |\n\n### DescriÃ§Ã£o\nCriar teste de integração simulando múltiplos repositórios com issues e PRs, validando agregação, métricas de PR e exportação PDF.\n\n### VerificaÃ§Ã£o\n- [ ] Verificar conformidade com SPEC-009\n- [ ] Validar critÃ©rios de aceite do PBI relacionado\n\n---\n*DevReport Task -- 2026-07-15*",
+        "user":  {
+                     "login":  "thiagocaandrade"
+                 },
+        "title":  "[TASK-058] Criar teste de integração do fluxo completo",
+        "labels":  [
+                       {
+                           "name":  "task",
+                           "color":  ""
+                       }
+                   ]
+    }
+]
