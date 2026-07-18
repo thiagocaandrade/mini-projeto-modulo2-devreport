@@ -38,7 +38,8 @@ class InsightServiceTest {
     void setUp() {
         IssueClassifier classifier = new IssueClassifier();
         IssueSelector issueSelector = new IssueSelector(classifier);
-        insightService = new InsightService(chatClient, issueSelector);
+        // mockMode=false: real AI behavior (no fallback unless AI fails)
+        insightService = new InsightService(chatClient, issueSelector, false);
     }
 
     @Test
@@ -84,7 +85,7 @@ class InsightServiceTest {
     }
 
     @Test
-    void shouldReturnNullOnAiFailure() {
+    void shouldReturnFallbackOnAiFailure() {
         Metric metrics = new Metric(5, 3, 1, 1);
         List<Issue> issues = List.of(createIssue("Test", "task"));
 
@@ -97,11 +98,14 @@ class InsightServiceTest {
                 metrics, issues, LocalDate.of(2026, 7, 1), LocalDate.of(2026, 7, 31)
         );
 
-        assertNull(result);
+        assertNotNull(result);
+        assertTrue(result.getContent().contains("Destaques do Período"));
+        assertTrue(result.getContent().contains("Métricas de Impacto"));
+        assertTrue(result.getContent().contains("Valor para o Time"));
     }
 
     @Test
-    void shouldReturnNullOnEmptyResponse() {
+    void shouldReturnFallbackOnEmptyResponse() {
         Metric metrics = new Metric(3, 2, 0, 1);
         List<Issue> issues = List.of(createIssue("Test", "feature"));
 
@@ -114,7 +118,10 @@ class InsightServiceTest {
                 metrics, issues, LocalDate.of(2026, 7, 1), LocalDate.of(2026, 7, 31)
         );
 
-        assertNull(result);
+        assertNotNull(result);
+        assertTrue(result.getContent().contains("Destaques do Período"));
+        assertTrue(result.getContent().contains("Métricas de Impacto"));
+        assertTrue(result.getContent().contains("Valor para o Time"));
     }
 
     @Test

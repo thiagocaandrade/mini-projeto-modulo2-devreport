@@ -1,4 +1,4 @@
-﻿package com.devreport.domain;
+package com.devreport.domain;
 
 public class RepositorySummary {
 

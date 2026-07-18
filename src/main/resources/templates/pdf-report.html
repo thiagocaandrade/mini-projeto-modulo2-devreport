@@ -142,6 +142,48 @@
             color: #adb5bd;
         }
 
+        /* Summary structured sections */
+        .summary-section {
+            margin-bottom: 10px;
+            padding: 10px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #dee2e6;
+        }
+        .summary-section h3 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 0 0 6px 0;
+            color: #212529;
+        }
+        .summary-section p, .summary-section li {
+            font-size: 9pt;
+            line-height: 1.5;
+            margin: 0 0 4px 0;
+            color: #495057;
+        }
+        .summary-section ul {
+            padding-left: 16px;
+            margin: 0;
+        }
+        .summary-section li {
+            margin-bottom: 4px;
+        }
+        .summary-section.highlight {
+            background-color: #e7f1ff;
+            border-left-color: #0d6efd;
+        }
+        .summary-section.highlight h3 { color: #0a58ca; }
+        .summary-section.metrics {
+            background-color: #eaf7ee;
+            border-left-color: #198754;
+        }
+        .summary-section.metrics h3 { color: #146c43; }
+        .summary-section.value {
+            background-color: #fff8e7;
+            border-left-color: #f0ad4e;
+        }
+        .summary-section.value h3 { color: #b85e00; }
+
         /* ---- Info row ---- */
         .info-row {
             font-size: 9pt;
@@ -167,6 +209,26 @@
         .size-table {
             width: 50%;
         }
+
+        /* ---- Legend Table ---- */
+        .legend-table {
+            width: 100%;
+            font-size: 8.5pt;
+        }
+        .legend-table th {
+            background-color: #e9ecef;
+            color: #495057;
+            font-weight: bold;
+            padding: 6px 8px;
+        }
+        .legend-table td {
+            padding: 5px 8px;
+            vertical-align: top;
+            line-height: 1.4;
+        }
+        .legend-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
     </style>
 </head>
 <body>
@@ -179,8 +241,6 @@
     <p class="info-row">
         <strong>Período:</strong> <span th:text="${startDateFormatted}">01/01/2026</span>
         a <span th:text="${endDateFormatted}">31/01/2026</span>
-        &#160;|&#160;
-        <strong>Repositórios analisados:</strong> <span th:text="${report.repositoriesCount}">1</span>
     </p>
 
     <!-- ===== METRICS CARDS ===== -->
@@ -276,33 +336,10 @@
         </div>
     </div>
 
-    <!-- ===== REPOSITORY SUMMARIES ===== -->
-    <div th:if="${repositorySummaries != null and !repositorySummaries.isEmpty()}">
-        <h2>Resumo por Repositório</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Repositório</th>
-                    <th>Issues</th>
-                    <th>PRs</th>
-                    <th>Additions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="rs : ${repositorySummaries}">
-                    <td th:text="${rs.name}">repo</td>
-                    <td th:text="${rs.totalIssues}">0</td>
-                    <td th:text="${rs.totalPRs}">0</td>
-                    <td th:text="${rs.totalAdditions}">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
     <!-- ===== INTELLIGENT SUMMARY ===== -->
     <div th:if="${summaryContent != null and !summaryContent.isEmpty()}">
         <h2>Resumo Inteligente</h2>
-        <div class="summary-box" th:text="${summaryContent}">
+        <div class="summary-box" th:utext="${summaryContent}">
             Resumo gerado por IA...
         </div>
     </div>
@@ -313,6 +350,51 @@
             <em>O resumo inteligente não pôde ser gerado, mas as métricas estão disponíveis.</em>
         </div>
     </div>
+
+    <!-- ===== LEGENDA DAS MÉTRICAS ===== -->
+    <h2>Legenda das Métricas</h2>
+    <p style="font-size:9pt; color:#6c757d; margin-bottom:10px;">
+        Entenda o significado de cada indicador apresentado neste relatório.
+    </p>
+
+    <table class="legend-table">
+        <thead>
+            <tr>
+                <th style="width:30%;">Métrica</th>
+                <th style="width:70%;">O que significa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Total de Entregas</strong></td>
+                <td>Número total de issues concluídas no período. Representa o volume de trabalho finalizado e entregue ao time/projeto.</td>
+            </tr>
+            <tr>
+                <td><strong>Features</strong></td>
+                <td>Issues classificadas como novas funcionalidades. Indicam capacidade de construir coisas novas e agregar valor ao produto.</td>
+            </tr>
+            <tr>
+                <td><strong>Bugs</strong></td>
+                <td>Issues de correção de defeitos. Mostram proatividade em manter a qualidade e estabilidade do sistema.</td>
+            </tr>
+            <tr>
+                <td><strong>Tasks</strong></td>
+                <td>Tarefas de manutenção, documentação, refatoração ou melhorias internas. Refletem cuidado com a saúde do código.</td>
+            </tr>
+            <tr>
+                <td><strong>Throughput Semanal</strong></td>
+                <td>Média de entregas por semana. Indica consistência e previsibilidade no ritmo de trabalho — um throughput estável é sinal de um profissional confiável.</td>
+            </tr>
+            <tr>
+                <td><strong>Velocidade Média</strong></td>
+                <td>Tempo médio (em dias) para resolver uma issue. Quanto menor, mais rápida é a entrega de valor. Mostra agilidade e capacidade de desbloquear o time rapidamente.</td>
+            </tr>
+            <tr>
+                <td><strong>Densidade de Bugs</strong></td>
+                <td>Percentual de bugs em relação ao total de entregas. Uma densidade baixa (&lt; 25%) indica foco em qualidade; uma densidade mais alta pode indicar um período de estabilização ou débito técnico sendo pago.</td>
+            </tr>
+        </tbody>
+    </table>
 
     <!-- Footer -->
     <div class="footer">

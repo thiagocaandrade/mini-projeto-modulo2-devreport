@@ -1,0 +1,44 @@
+﻿{
+    "TASK-001":  {
+                     "issue":  5,
+                     "branch":  "task/TASK-001-criar-projeto-spring-boot-com-maven",
+                     "task":  "TASK-001",
+                     "title":  "Criar projeto Spring Boot com Maven",
+                     "date":  "2026-07-15"
+                 },
+    "TASK-002":  {
+                     "issue":  6,
+                     "branch":  "task/TASK-002-configurar-dependncias-principais",
+                     "task":  "TASK-002",
+                     "title":  "Configurar dependencias principais",
+                     "date":  "2026-07-15"
+                 },
+    "TASK-003":  {
+                     "issue":  7,
+                     "branch":  "task/TASK-003-criar-estrutura-de-pacotes",
+                     "task":  "TASK-003",
+                     "title":  "Criar estrutura de pacotes",
+                     "date":  "2026-07-15"
+                 },
+    "TASK-004":  {
+                     "issue":  8,
+                     "branch":  "task/TASK-004-criar-modelos-de-domnio",
+                     "task":  "TASK-004",
+                     "title":  "Criar modelos de dominio",
+                     "date":  "2026-07-15"
+                 },
+    "TASK-005":  {
+                     "issue":  9,
+                     "branch":  "task/TASK-005-criar-dtos-principais",
+                     "task":  "TASK-005",
+                     "title":  "Criar DTOs principais",
+                     "date":  "2026-07-15"
+                 },
+    "TASK-059":  {
+                     "issue":  63,
+                     "title":  "Correções finais de encoding, modo mock IA e polimento do MVP",
+                     "task":  "TASK-059",
+                     "branch":  "task/TASK-059-correcoes-finais-encoding-e-modo-mock",
+                     "date":  "2026-07-18"
+                 }
+}

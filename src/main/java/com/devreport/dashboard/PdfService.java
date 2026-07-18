@@ -3,7 +3,6 @@ package com.devreport.dashboard;
 import com.devreport.domain.AnalysisRequest;
 import com.devreport.domain.DashboardReport;
 import com.devreport.domain.PRMetrics;
-import com.devreport.domain.RepositorySummary;
 import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,15 +44,13 @@ public class PdfService {
                 context.setVariable("totalChangedLines", pr.getTotalAdditions() + pr.getTotalDeletions());
             }
 
-            // Prepare repository summaries
-            context.setVariable("repositorySummaries", report.getRepositorySummaries());
-
             // Prepare summary content - sanitize to avoid XML issues
+            // HTML tags are intentionally preserved for structured summary rendering
             String summaryContent = null;
             if (report.getSummary() != null) {
                 summaryContent = report.getSummary().getContent();
-                // Remove any control characters that break XML parsing (except tab, newline, carriage return)
                 if (summaryContent != null) {
+                    // Remove control characters that break XML parsing (keep tab, newline, carriage return)
                     summaryContent = summaryContent.replaceAll("[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1F]", "");
                 }
             }

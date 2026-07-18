@@ -156,6 +156,12 @@ As Tasks foram organizadas para permitir construção incremental, mantendo o si
 | TASK-057 | Criar testes para PRMetricsService | P1 | SPEC-011 |
 | TASK-058 | Criar teste de integração do fluxo completo | P2 | SPEC-009/010/011/012 |
 
+### Correções Finais e Polimento
+
+| ID | Task | Prioridade | SPEC |
+|---|---|---|---|
+| TASK-059 | Correções finais de encoding, modo mock IA e polimento do MVP | P1 | SPEC-008 |
+
 ---
 
 ## 4. Tasks Detalhadas
@@ -1333,6 +1339,28 @@ As Tasks foram organizadas para permitir construção incremental, mantendo o si
 - Métricas de PR são consistentes.
 - PDF é gerado sem erro.
 - Falha em um repositório mantém análise dos demais.
+
+---
+
+### TASK-059 - Correções finais de encoding, modo mock IA e polimento do MVP
+
+**Prioridade:** P1
+
+**Specification:** SPEC-008
+
+**Descrição:** Consolidar correções finais do MVP: remover BOM de arquivos Java, implementar modo mock no InsightService para funcionamento sem chave API OpenAI, consolidar dependências no pom.xml, refinar templates dashboard e PDF, e ajustar controller/DTOs.
+
+**Resultado esperado:** Projeto compila e executa sem erros de encoding; IA funciona em modo mock sem depender de API externa; templates renderizam corretamente.
+
+**Dependências:** TASK-032, TASK-036, TASK-055.
+
+**Verificação:**
+
+- Arquivos Java não possuem BOM.
+- Projeto compila com `mvnw.cmd compile`.
+- Modo mock da IA gera resumo fallback a partir das métricas.
+- Templates dashboard e PDF renderizam sem erros.
+- Dependências no pom.xml estão consolidadas.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿package com.devreport.domain;
+package com.devreport.domain;
 
 import java.util.Collections;
 import java.util.Map;

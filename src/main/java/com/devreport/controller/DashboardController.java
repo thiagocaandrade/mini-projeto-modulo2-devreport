@@ -1,12 +1,10 @@
 package com.devreport.controller;
 
 import com.devreport.agent.DevReportAgent;
-import com.devreport.config.GitHubProperties;
 import com.devreport.controller.dto.*;
 import com.devreport.dashboard.PdfService;
 import com.devreport.domain.AnalysisRequest;
 import com.devreport.domain.DashboardReport;
-import com.devreport.infrastructure.github.GitHubClient;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -16,70 +14,28 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.*;
 import java.time.LocalDate;
-import java.util.stream.Collectors;
+import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 
 @Controller
 public class DashboardController {
 
     private final DevReportAgent agent;
-    private final GitHubClient gitHubClient;
-    private final GitHubProperties gitHubProperties;
     private final PdfService pdfService;
 
-    public DashboardController(DevReportAgent agent, GitHubClient gitHubClient,
-                                GitHubProperties gitHubProperties,
-                                PdfService pdfService) {
+    public DashboardController(DevReportAgent agent, PdfService pdfService) {
         this.agent = agent;
-        this.gitHubClient = gitHubClient;
-        this.gitHubProperties = gitHubProperties;
         this.pdfService = pdfService;
     }
 
     @GetMapping("/")
     public ModelAndView index() {
         ModelAndView mv = new ModelAndView("dashboard");
-        String defaultRepo = gitHubProperties.getOwner() + "/" + gitHubProperties.getRepository();
-        AnalysisRequestDTO request = new AnalysisRequestDTO();
-        request.setRepositories(List.of(defaultRepo));
-        mv.addObject("request", request);
-        mv.addObject("defaultRepo", defaultRepo);
-        try {
-            List<String> repos = fetchRepositoryNames();
-            mv.addObject("availableRepos", repos);
-        } catch (Exception e) {
-            mv.addObject("availableRepos", Collections.emptyList());
-        }
+        mv.addObject("request", new AnalysisRequestDTO());
         return mv;
-    }
-
-    @GetMapping("/api/repositories")
-    @ResponseBody
-    public List<String> getRepositories() {
-        return fetchRepositoryNames();
-    }
-
-    private List<String> fetchRepositoryNames() {
-        try {
-            String json = gitHubClient.fetchRepositories();
-            com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
-            com.fasterxml.jackson.databind.JsonNode root = mapper.readTree(json);
-            List<String> repos = new ArrayList<>();
-            if (root.isArray()) {
-                for (com.fasterxml.jackson.databind.JsonNode node : root) {
-                    if (node.has("full_name")) {
-                        repos.add(node.get("full_name").asText());
-                    }
-                }
-            }
-            return repos;
-        } catch (Exception e) {
-            return Collections.emptyList();
-        }
     }
 
     @PostMapping("/")
@@ -91,14 +47,8 @@ public class DashboardController {
             return mv;
         }
 
-        // Fallback to default repo if none selected
-        List<String> repos = request.getRepositories();
-        if (repos == null || repos.isEmpty()) {
-            String defaultRepo = gitHubProperties.getOwner() + "/" + gitHubProperties.getRepository();
-            repos = List.of(defaultRepo);
-        }
         AnalysisRequest domainRequest = new AnalysisRequest(
-                request.getStartDate(), request.getEndDate(), repos);
+                request.getStartDate(), request.getEndDate(), Collections.emptyList());
         DashboardReport report = agent.analyze(domainRequest);
         DashboardDTO dashboard = toDto(report);
 
@@ -157,39 +107,22 @@ public class DashboardController {
             dto.setPrSizeValues(report.getPrSizeChart().getValues());
         }
 
-        // Repository Summaries
-        if (report.getRepositorySummaries() != null) {
-            dto.setRepositorySummaries(report.getRepositorySummaries().stream()
-                    .map(rs -> {
-                        RepositorySummaryDTO rsDto = new RepositorySummaryDTO();
-                        rsDto.setName(rs.getName());
-                        rsDto.setTotalIssues(rs.getTotalIssues());
-                        rsDto.setTotalPRs(rs.getTotalPRs());
-                        rsDto.setTotalAdditions(rs.getTotalAdditions());
-                        return rsDto;
-                    })
-                    .collect(Collectors.toList()));
-        }
-
-        dto.setRepositoriesCount(report.getRepositoriesCount());
-
         return dto;
     }
 
     @GetMapping("/dashboard/export")
     public ResponseEntity<byte[]> exportPdf(@RequestParam LocalDate start,
-                                             @RequestParam LocalDate end,
-                                             @RequestParam(required = false) List<String> repositories) {
-        AnalysisRequest request = new AnalysisRequest(start, end, repositories);
+                                             @RequestParam LocalDate end) {
+        AnalysisRequest request = new AnalysisRequest(start, end, Collections.emptyList());
         DashboardReport report = agent.analyze(request);
 
-        // Convert HTML to real PDF binary using openhtmltopdf (TASK-055)
         byte[] pdfBytes = pdfService.generatePdf(report, request);
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
         headers.setContentDisposition(org.springframework.http.ContentDisposition.attachment()
-                .filename("devreport-" + start + "-to-" + end + ".pdf")
+                .filename("devreport-" + start.format(dtf) + "-a-" + end.format(dtf) + ".pdf")
                 .build());
 
         return ResponseEntity.ok().headers(headers).body(pdfBytes);

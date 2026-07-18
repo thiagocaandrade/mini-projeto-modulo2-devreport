@@ -3,7 +3,6 @@ package com.devreport.controller.dto;
 import com.devreport.shared.ValidPeriod;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.List;
 
 @ValidPeriod
 public class AnalysisRequestDTO {
@@ -13,8 +12,6 @@ public class AnalysisRequestDTO {
 
     @NotNull(message = "A data final é obrigatória.")
     private LocalDate endDate;
-
-    private List<String> repositories;
 
     public AnalysisRequestDTO() {
     }
@@ -38,13 +35,5 @@ public class AnalysisRequestDTO {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
-    }
-
-    public List<String> getRepositories() {
-        return repositories;
-    }
-
-    public void setRepositories(List<String> repositories) {
-        this.repositories = repositories;
     }
 }

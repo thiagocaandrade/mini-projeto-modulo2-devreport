@@ -1,4 +1,4 @@
-﻿package com.devreport.domain;
+package com.devreport.domain;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
