@@ -16,6 +16,14 @@ O **DevReport** transforma dados de tarefas concluídas no GitHub em indicadores
 
 ---
 
+## 📸 Demonstração
+
+![alt text](mini-projeto-devreport.gif)
+
+> *Dashboard interativo do DevReport exibindo métricas de produtividade, gráficos de entregas e resumo inteligente gerado por IA.*
+
+---
+
 ## 🏗️ Arquitetura
 
 O projeto segue **Clean Architecture** com separação clara de responsabilidades:

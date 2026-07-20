@@ -2,12 +2,15 @@ package com.devreport.agent;
 
 import com.devreport.ai.InsightService;
 import com.devreport.domain.Insight;
+import org.bsc.langgraph4j.action.NodeAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 @Component
-public class GenerateInsightsNode {
+public class GenerateInsightsNode implements NodeAction<AnalysisState> {
 
     private static final Logger log = LoggerFactory.getLogger(GenerateInsightsNode.class);
 
@@ -17,12 +20,13 @@ public class GenerateInsightsNode {
         this.insightService = insightService;
     }
 
-    public AnalysisState execute(AnalysisState state) {
+    @Override
+    public Map<String, Object> apply(AnalysisState state) {
         log.info("Generating insights");
 
         if (state.getMetrics() == null) {
             log.warn("No metrics available, skipping insights");
-            return state;
+            return Map.of();
         }
 
         try {
@@ -38,8 +42,8 @@ public class GenerateInsightsNode {
             );
 
             if (insight != null) {
-                state.setSummary(insight);
                 log.info("Insight generated successfully");
+                return Map.of(AnalysisState.SUMMARY_KEY, insight);
             } else {
                 log.warn("Insight generation returned null (AI unavailable or no data)");
             }
@@ -48,6 +52,6 @@ public class GenerateInsightsNode {
             // Non-blocking: do NOT add to state.errors
         }
 
-        return state;
+        return Map.of();
     }
 }

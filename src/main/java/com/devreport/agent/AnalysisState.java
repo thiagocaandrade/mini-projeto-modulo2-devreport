@@ -1,82 +1,137 @@
 package com.devreport.agent;
 
 import com.devreport.domain.*;
+import org.bsc.langgraph4j.state.AgentState;
+import org.bsc.langgraph4j.state.Channel;
+import org.bsc.langgraph4j.state.Channels;
+
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class AnalysisState {
+public class AnalysisState extends AgentState {
 
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private List<String> repositories = new ArrayList<>();
-    private List<Issue> issues = new ArrayList<>();
-    private List<PullRequest> pullRequests = new ArrayList<>();
-    private Metric metrics;
-    private PRMetrics prMetrics;
-    private List<RepositorySummary> repositorySummaries = new ArrayList<>();
-    private ChartData periodChart;
-    private ChartData categoryChart;
-    private ChartData prSizeChart;
-    private int repositoriesCount;
-    private Insight summary;
-    private DashboardReport dashboard;
-    private String message;
-    private List<String> errors = new ArrayList<>();
+    // Channel keys
+    public static final String START_DATE_KEY = "startDate";
+    public static final String END_DATE_KEY = "endDate";
+    public static final String REPOSITORIES_KEY = "repositories";
+    public static final String ISSUES_KEY = "issues";
+    public static final String PULL_REQUESTS_KEY = "pullRequests";
+    public static final String METRICS_KEY = "metrics";
+    public static final String PR_METRICS_KEY = "prMetrics";
+    public static final String REPOSITORY_SUMMARIES_KEY = "repositorySummaries";
+    public static final String PERIOD_CHART_KEY = "periodChart";
+    public static final String CATEGORY_CHART_KEY = "categoryChart";
+    public static final String PR_SIZE_CHART_KEY = "prSizeChart";
+    public static final String REPOSITORIES_COUNT_KEY = "repositoriesCount";
+    public static final String SUMMARY_KEY = "summary";
+    public static final String DASHBOARD_KEY = "dashboard";
+    public static final String MESSAGE_KEY = "message";
+    public static final String ERRORS_KEY = "errors";
 
-    public AnalysisState() {
+    // Schema: defines how channels merge values (built with LinkedHashMap for 16+ entries)
+    @SuppressWarnings("unchecked")
+    public static final Map<String, Channel<?>> SCHEMA = createSchema();
+
+    private static Map<String, Channel<?>> createSchema() {
+        Map<String, Channel<?>> schema = new LinkedHashMap<>();
+        schema.put(START_DATE_KEY, Channels.base(() -> LocalDate.now()));
+        schema.put(END_DATE_KEY, Channels.base(() -> LocalDate.now()));
+        schema.put(REPOSITORIES_KEY, Channels.base(ArrayList::new));
+        schema.put(ISSUES_KEY, Channels.base(ArrayList::new));
+        schema.put(PULL_REQUESTS_KEY, Channels.base(ArrayList::new));
+        schema.put(METRICS_KEY, Channels.base(() -> new Metric(0, 0, 0, 0)));
+        schema.put(PR_METRICS_KEY, Channels.base(() -> new PRMetrics(0, 0, 0, 0, 0.0, 0, java.util.Map.of())));
+        schema.put(REPOSITORY_SUMMARIES_KEY, Channels.base(ArrayList::new));
+        schema.put(PERIOD_CHART_KEY, Channels.base(() -> new ChartData(java.util.List.of(), java.util.List.of())));
+        schema.put(CATEGORY_CHART_KEY, Channels.base(() -> new ChartData(java.util.List.of(), java.util.List.of())));
+        schema.put(PR_SIZE_CHART_KEY, Channels.base(() -> new ChartData(java.util.List.of(), java.util.List.of())));
+        schema.put(REPOSITORIES_COUNT_KEY, Channels.base(() -> 0));
+        schema.put(SUMMARY_KEY, Channels.base(() -> new Insight("")));
+        schema.put(DASHBOARD_KEY, Channels.base(() -> new DashboardReport(
+                new Metric(0, 0, 0, 0),
+                new ChartData(java.util.List.of(), java.util.List.of()),
+                new ChartData(java.util.List.of(), java.util.List.of()),
+                null, "")));
+        schema.put(MESSAGE_KEY, Channels.base(() -> ""));
+        schema.put(ERRORS_KEY, Channels.appender(ArrayList::new));
+        return Collections.unmodifiableMap(schema);
     }
 
-    public AnalysisState(LocalDate startDate, LocalDate endDate) {
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public AnalysisState(Map<String, Object> initData) {
+        super(initData);
     }
 
-    public LocalDate getStartDate() { return startDate; }
-    public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
+    // ── Typed accessors (read-only — state is immutable, changes flow via return Map) ──
 
-    public LocalDate getEndDate() { return endDate; }
-    public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
+    @SuppressWarnings("unchecked")
+    public LocalDate getStartDate() {
+        return (LocalDate) data().get(START_DATE_KEY);
+    }
 
-    public List<String> getRepositories() { return repositories; }
-    public void setRepositories(List<String> repositories) { this.repositories = repositories != null ? repositories : new ArrayList<>(); }
+    @SuppressWarnings("unchecked")
+    public LocalDate getEndDate() {
+        return (LocalDate) data().get(END_DATE_KEY);
+    }
 
-    public List<Issue> getIssues() { return issues; }
-    public void setIssues(List<Issue> issues) { this.issues = issues != null ? issues : new ArrayList<>(); }
+    @SuppressWarnings("unchecked")
+    public List<String> getRepositories() {
+        return (List<String>) data().getOrDefault(REPOSITORIES_KEY, Collections.emptyList());
+    }
 
-    public List<PullRequest> getPullRequests() { return pullRequests; }
-    public void setPullRequests(List<PullRequest> pullRequests) { this.pullRequests = pullRequests != null ? pullRequests : new ArrayList<>(); }
+    @SuppressWarnings("unchecked")
+    public List<Issue> getIssues() {
+        return (List<Issue>) data().getOrDefault(ISSUES_KEY, Collections.emptyList());
+    }
 
-    public Metric getMetrics() { return metrics; }
-    public void setMetrics(Metric metrics) { this.metrics = metrics; }
+    @SuppressWarnings("unchecked")
+    public List<PullRequest> getPullRequests() {
+        return (List<PullRequest>) data().getOrDefault(PULL_REQUESTS_KEY, Collections.emptyList());
+    }
 
-    public ChartData getPrSizeChart() { return prSizeChart; }
-    public void setPrSizeChart(ChartData prSizeChart) { this.prSizeChart = prSizeChart; }
+    public Metric getMetrics() {
+        return (Metric) data().get(METRICS_KEY);
+    }
 
-    public int getRepositoriesCount() { return repositoriesCount; }
-    public void setRepositoriesCount(int repositoriesCount) { this.repositoriesCount = repositoriesCount; }
+    public PRMetrics getPrMetrics() {
+        return (PRMetrics) data().get(PR_METRICS_KEY);
+    }
 
-    public PRMetrics getPrMetrics() { return prMetrics; }
-    public void setPrMetrics(PRMetrics prMetrics) { this.prMetrics = prMetrics; }
+    @SuppressWarnings("unchecked")
+    public List<RepositorySummary> getRepositorySummaries() {
+        return (List<RepositorySummary>) data().getOrDefault(REPOSITORY_SUMMARIES_KEY, Collections.emptyList());
+    }
 
-    public List<RepositorySummary> getRepositorySummaries() { return repositorySummaries; }
-    public void setRepositorySummaries(List<RepositorySummary> repositorySummaries) { this.repositorySummaries = repositorySummaries != null ? repositorySummaries : new ArrayList<>(); }
+    public ChartData getPeriodChart() {
+        return (ChartData) data().get(PERIOD_CHART_KEY);
+    }
 
-    public ChartData getPeriodChart() { return periodChart; }
-    public void setPeriodChart(ChartData periodChart) { this.periodChart = periodChart; }
+    public ChartData getCategoryChart() {
+        return (ChartData) data().get(CATEGORY_CHART_KEY);
+    }
 
-    public ChartData getCategoryChart() { return categoryChart; }
-    public void setCategoryChart(ChartData categoryChart) { this.categoryChart = categoryChart; }
+    public ChartData getPrSizeChart() {
+        return (ChartData) data().get(PR_SIZE_CHART_KEY);
+    }
 
-    public Insight getSummary() { return summary; }
-    public void setSummary(Insight summary) { this.summary = summary; }
+    public int getRepositoriesCount() {
+        Object val = data().get(REPOSITORIES_COUNT_KEY);
+        return val instanceof Integer i ? i : 0;
+    }
 
-    public DashboardReport getDashboard() { return dashboard; }
-    public void setDashboard(DashboardReport dashboard) { this.dashboard = dashboard; }
+    public Insight getSummary() {
+        return (Insight) data().get(SUMMARY_KEY);
+    }
 
-    public String getMessage() { return message; }
-    public void setMessage(String message) { this.message = message; }
+    public DashboardReport getDashboard() {
+        return (DashboardReport) data().get(DASHBOARD_KEY);
+    }
 
-    public List<String> getErrors() { return errors; }
-    public void setErrors(List<String> errors) { this.errors = errors != null ? errors : new ArrayList<>(); }
+    public String getMessage() {
+        return (String) data().get(MESSAGE_KEY);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<String> getErrors() {
+        return (List<String>) data().getOrDefault(ERRORS_KEY, Collections.emptyList());
+    }
 }

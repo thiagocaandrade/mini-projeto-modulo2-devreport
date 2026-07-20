@@ -4,6 +4,7 @@ import com.devreport.domain.*;
 import com.devreport.metrics.MetricsService;
 import com.devreport.metrics.ChartDataService;
 import com.devreport.metrics.PRMetricsService;
+import org.bsc.langgraph4j.action.NodeAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
-public class CalculateMetricsNode {
+public class CalculateMetricsNode implements NodeAction<AnalysisState> {
 
     private static final Logger log = LoggerFactory.getLogger(CalculateMetricsNode.class);
 
@@ -27,7 +28,8 @@ public class CalculateMetricsNode {
         this.prMetricsService = prMetricsService;
     }
 
-    public AnalysisState execute(AnalysisState state) {
+    @Override
+    public Map<String, Object> apply(AnalysisState state) {
         log.info("Calculating metrics for {} issues and {} PRs",
                 state.getIssues().size(), state.getPullRequests().size());
 
@@ -37,10 +39,6 @@ public class CalculateMetricsNode {
         var periodChart = chartDataService.buildPeriodChart(issues);
         var categoryChart = chartDataService.buildCategoryChart(issues);
 
-        state.setMetrics(metrics);
-        state.setPeriodChart(periodChart);
-        state.setCategoryChart(categoryChart);
-
         log.info("Metrics calculated: total={}, features={}, bugs={}, tasks={}",
                 metrics.getTotal(), metrics.getFeatures(), metrics.getBugs(), metrics.getTasks());
 
@@ -49,15 +47,11 @@ public class CalculateMetricsNode {
         var prMetrics = prMetricsService.calculate(prs);
         var prSizeChart = chartDataService.buildPRSizeChart(prMetrics);
 
-        state.setPrMetrics(prMetrics);
-        state.setPrSizeChart(prSizeChart);
-
         log.info("PR metrics calculated: totalMerged={}, additions={}, deletions={}",
                 prMetrics.getTotalMerged(), prMetrics.getTotalAdditions(), prMetrics.getTotalDeletions());
 
         // Repository summaries
         List<RepositorySummary> repoSummaries = computeRepositorySummaries(issues, prs);
-        state.setRepositorySummaries(repoSummaries);
 
         // Count unique repositories
         Set<String> repoNames = new HashSet<>();
@@ -70,9 +64,17 @@ public class CalculateMetricsNode {
         if (state.getRepositories() != null && !state.getRepositories().isEmpty()) {
             repoNames.addAll(state.getRepositories());
         }
-        state.setRepositoriesCount(repoNames.size());
 
-        return state;
+        // Return all computed values for StateGraph merge
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put(AnalysisState.METRICS_KEY, metrics);
+        result.put(AnalysisState.PERIOD_CHART_KEY, periodChart);
+        result.put(AnalysisState.CATEGORY_CHART_KEY, categoryChart);
+        result.put(AnalysisState.PR_METRICS_KEY, prMetrics);
+        result.put(AnalysisState.PR_SIZE_CHART_KEY, prSizeChart);
+        result.put(AnalysisState.REPOSITORY_SUMMARIES_KEY, repoSummaries);
+        result.put(AnalysisState.REPOSITORIES_COUNT_KEY, repoNames.size());
+        return result;
     }
 
     private List<RepositorySummary> computeRepositorySummaries(List<Issue> issues, List<PullRequest> prs) {

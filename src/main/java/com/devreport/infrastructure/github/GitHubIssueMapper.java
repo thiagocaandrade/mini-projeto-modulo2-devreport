@@ -44,7 +44,11 @@ public class GitHubIssueMapper {
             return issues;
 
         } catch (Exception e) {
-            log.error("Failed to parse GitHub response: {}", e.getMessage());
+            String preview = jsonResponse.length() > 300
+                    ? jsonResponse.substring(0, 300) + "..."
+                    : jsonResponse;
+            log.error("Failed to parse GitHub response ({} chars): {} — preview: {}",
+                    jsonResponse.length(), e.getMessage(), preview);
             return Collections.emptyList();
         }
     }
