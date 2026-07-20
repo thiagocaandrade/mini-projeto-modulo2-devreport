@@ -161,6 +161,8 @@ As Tasks foram organizadas para permitir construção incremental, mantendo o si
 | ID | Task | Prioridade | SPEC |
 |---|---|---|---|
 | TASK-059 | Correções finais de encoding, modo mock IA e polimento do MVP | P1 | SPEC-008 |
+| TASK-060 | Implementar README com explicação | P1 | SPEC-008 |
+| TASK-061 | Documentar prompts utilizados no desenvolvimento | P1 | SPEC-008 |
 
 ---
 
@@ -1361,6 +1363,54 @@ As Tasks foram organizadas para permitir construção incremental, mantendo o si
 - Modo mock da IA gera resumo fallback a partir das métricas.
 - Templates dashboard e PDF renderizam sem erros.
 - Dependências no pom.xml estão consolidadas.
+
+---
+
+### TASK-060 - Implementar README com explicação
+
+**Prioridade:** P1
+
+**Specification:** SPEC-008
+
+**Descrição:** Criar e atualizar o README.md do projeto com explicação completa sobre o DevReport: objetivo, arquitetura, stack tecnológica, fluxo do agente LangGraph4j, instruções de execução, funcionalidades do dashboard, testes e estrutura do projeto.
+
+**Resultado esperado:** README.md claro, completo e profissional, servindo como documentação de entrada para novos desenvolvedores e stakeholders.
+
+**Dependências:** TASK-059.
+
+**Verificação:**
+
+- README.md contém seção "Sobre" com objetivo do projeto.
+- README.md contém diagrama de arquitetura e estrutura de pacotes.
+- README.md contém tabela da stack tecnológica.
+- README.md documenta o fluxo do agente LangGraph4j com diagrama e descrição dos 6 nodes.
+- README.md contém instruções de execução com variáveis de ambiente e comandos Maven.
+- README.md lista as funcionalidades do dashboard (Issues, IA, PR Analytics, PDF).
+- README.md contém seção de testes com tabela de cobertura.
+- README.md inclui badges (Java 21, Spring Boot 3.3, licença MIT).
+
+---
+
+### TASK-061 - Documentar prompts utilizados no desenvolvimento
+
+**Prioridade:** P1
+
+**Specification:** SPEC-008
+
+**Descrição:** Criar o arquivo docs/prompts.md documentando todos os prompts submetidos ao agente de IA (GitHub Copilot) durante a implementação do MVP, do TASK-001 ao TASK-059, organizados por épico/seção do projeto.
+
+**Resultado esperado:** Arquivo docs/prompts.md com 59+ prompts documentados, servindo como registro histórico e referência para o time.
+
+**Dependências:** TASK-060.
+
+**Verificação:**
+
+- docs/prompts.md existe e contém cabeçalho explicativo.
+- Um prompt por task documentado, de TASK-001 a TASK-059.
+- Prompts organizados por seções seguindo os épicos do projeto.
+- Cada prompt usa bloco de código (```) com a instrução exata.
+- Índice rápido com tabela Task × Área × Prompt.
+- Total de prompts documentados no rodapé.
 
 ---
 
