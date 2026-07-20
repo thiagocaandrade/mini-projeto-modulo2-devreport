@@ -3,7 +3,9 @@ package com.devreport.domain;
 import java.util.Collections;
 import java.util.List;
 
-public class DashboardReport {
+public class DashboardReport implements java.io.Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final Metric metrics;
     private final ChartData periodChart;

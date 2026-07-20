@@ -19,7 +19,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
@@ -85,11 +87,12 @@ class MultiRepoResilienceTest {
 
     @Test
     void shouldHandleFailureInOneRepoWhileOthersSucceed() {
-        // Setup: 3 repos, repo B fails
-        AnalysisState state = new AnalysisState();
-        state.setStartDate(LocalDate.now().minusDays(7));
-        state.setEndDate(LocalDate.now());
-        state.setRepositories(List.of("owner/repoA", "owner/repoB", "owner/repoC"));
+        // Setup: 3 repos, repo B fails — use init map instead of setters
+        Map<String, Object> initData = new java.util.LinkedHashMap<>();
+        initData.put(AnalysisState.START_DATE_KEY, LocalDate.now().minusDays(7));
+        initData.put(AnalysisState.END_DATE_KEY, LocalDate.now());
+        initData.put(AnalysisState.REPOSITORIES_KEY, List.of("owner/repoA", "owner/repoB", "owner/repoC"));
+        AnalysisState state = new AnalysisState(initData);
 
         // Repo A succeeds
         when(gitHubClient.fetchIssuesForRepo(eq("owner"), eq("repoA"), anyString(), anyInt(), anyInt()))
@@ -117,12 +120,14 @@ class MultiRepoResilienceTest {
         when(issueMapper.mapToIssues(anyString())).thenReturn(List.of(issueA, issueC));
         when(prMapper.mapToPullRequests(anyString())).thenReturn(Collections.emptyList());
 
-        // Execute
-        fetchNode.execute(state);
+        // Execute and capture result
+        Map<String, Object> result = fetchNode.apply(state);
 
-        // Verify: issues from repos A and C were collected
-        assertNotNull(state.getIssues());
-        assertFalse(state.getIssues().isEmpty());
+        // Verify: issues from repos A and C were collected via result map
+        @SuppressWarnings("unchecked")
+        List<Issue> issues = (List<Issue>) result.getOrDefault(AnalysisState.ISSUES_KEY, Collections.emptyList());
+        assertNotNull(issues);
+        assertFalse(issues.isEmpty());
 
         // TASK-056: Log registra falha do repositório específico
         List<ILoggingEvent> issueLogs = issueServiceLogAppender.list;
@@ -141,18 +146,15 @@ class MultiRepoResilienceTest {
         assertTrue(prRepoBFailureLogged,
                 "Expected ERROR log for repoB PR fetch failure, but none found. Logs: " + prLogs);
 
-        // TASK-056: Known gap — partial failure does not set a dashboard message.
-        // The current code only logs per-repo errors silently. The state errors may be empty.
-        // This documents the gap; a future enhancement would propagate partial failure info.
-        assertNotNull(state.getIssues());
     }
 
     @Test
     void shouldFallbackToDefaultRepoWhenListIsEmpty() {
-        AnalysisState state = new AnalysisState();
-        state.setStartDate(LocalDate.now().minusDays(7));
-        state.setEndDate(LocalDate.now());
-        state.setRepositories(Collections.emptyList());
+        Map<String, Object> initData = new java.util.LinkedHashMap<>();
+        initData.put(AnalysisState.START_DATE_KEY, LocalDate.now().minusDays(7));
+        initData.put(AnalysisState.END_DATE_KEY, LocalDate.now());
+        initData.put(AnalysisState.REPOSITORIES_KEY, Collections.emptyList());
+        AnalysisState state = new AnalysisState(initData);
 
         when(gitHubClient.fetchIssuesForRepo(eq("testowner"), eq("default-repo"), anyString(), anyInt(), anyInt()))
                 .thenReturn("[{\"id\":\"1\",\"title\":\"Default Issue\",\"closed_at\":\"2026-07-10T00:00:00Z\",\"repository\":\"testowner/default-repo\"}]");
@@ -164,19 +166,22 @@ class MultiRepoResilienceTest {
         when(issueMapper.mapToIssues(anyString())).thenReturn(List.of(defaultIssue));
         when(prMapper.mapToPullRequests(anyString())).thenReturn(Collections.emptyList());
 
-        fetchNode.execute(state);
+        Map<String, Object> result = fetchNode.apply(state);
+        @SuppressWarnings("unchecked")
+        List<Issue> issues = (List<Issue>) result.getOrDefault(AnalysisState.ISSUES_KEY, Collections.emptyList());
 
-        assertNotNull(state.getIssues());
-        assertEquals(1, state.getIssues().size());
-        assertEquals("testowner/default-repo", state.getIssues().get(0).getRepository());
+        assertNotNull(issues);
+        assertEquals(1, issues.size());
+        assertEquals("testowner/default-repo", issues.get(0).getRepository());
     }
 
     @Test
     void shouldHandleAllReposFailingGracefully() {
-        AnalysisState state = new AnalysisState();
-        state.setStartDate(LocalDate.now().minusDays(7));
-        state.setEndDate(LocalDate.now());
-        state.setRepositories(List.of("owner/repoA", "owner/repoB"));
+        Map<String, Object> initData = new java.util.LinkedHashMap<>();
+        initData.put(AnalysisState.START_DATE_KEY, LocalDate.now().minusDays(7));
+        initData.put(AnalysisState.END_DATE_KEY, LocalDate.now());
+        initData.put(AnalysisState.REPOSITORIES_KEY, List.of("owner/repoA", "owner/repoB"));
+        AnalysisState state = new AnalysisState(initData);
 
         when(gitHubClient.fetchIssuesForRepo(anyString(), anyString(), anyString(), anyInt(), anyInt()))
                 .thenThrow(new RuntimeException("All repos down"));
@@ -185,10 +190,11 @@ class MultiRepoResilienceTest {
         when(issueMapper.mapToIssues(anyString())).thenReturn(Collections.emptyList());
         when(prMapper.mapToPullRequests(anyString())).thenReturn(Collections.emptyList());
 
-        fetchNode.execute(state);
+        Map<String, Object> result = fetchNode.apply(state);
 
-        // Should have an error message
-        assertNotNull(state.getMessage());
+        // Should have an error message from the result map
+        String message = (String) result.get(AnalysisState.MESSAGE_KEY);
+        assertNotNull(message);
 
         // TASK-056: Verify error logs for each failing repo
         List<ILoggingEvent> issueLogs = issueServiceLogAppender.list;
@@ -211,11 +217,11 @@ class MultiRepoResilienceTest {
     @Test
     void shouldHandlePRFailureInOneRepoWhileIssuesAndOtherPRsSucceed() {
         // TASK-056: Test that PR failure in one repo doesn't block issue collection
-        // or PR collection from other repos
-        AnalysisState state = new AnalysisState();
-        state.setStartDate(LocalDate.now().minusDays(7));
-        state.setEndDate(LocalDate.now());
-        state.setRepositories(List.of("owner/repoA", "owner/repoB"));
+        Map<String, Object> initData = new java.util.LinkedHashMap<>();
+        initData.put(AnalysisState.START_DATE_KEY, LocalDate.now().minusDays(7));
+        initData.put(AnalysisState.END_DATE_KEY, LocalDate.now());
+        initData.put(AnalysisState.REPOSITORIES_KEY, List.of("owner/repoA", "owner/repoB"));
+        AnalysisState state = new AnalysisState(initData);
 
         // Issues succeed for both repos
         when(gitHubClient.fetchIssuesForRepo(eq("owner"), eq("repoA"), anyString(), anyInt(), anyInt()))
@@ -242,17 +248,21 @@ class MultiRepoResilienceTest {
                 Collections.emptyList(), "owner/repoA");
         when(prMapper.mapToPullRequests(anyString())).thenReturn(List.of(prA));
 
-        // Execute
-        fetchNode.execute(state);
+        // Execute and capture result
+        Map<String, Object> result = fetchNode.apply(state);
 
-        // Issues from both repos collected
-        assertNotNull(state.getIssues());
-        assertEquals(2, state.getIssues().size());
+        // Issues from both repos collected via result map
+        @SuppressWarnings("unchecked")
+        List<Issue> issues = (List<Issue>) result.getOrDefault(AnalysisState.ISSUES_KEY, Collections.emptyList());
+        assertNotNull(issues);
+        assertEquals(2, issues.size());
 
         // PRs: only repo A's PR collected, repo B's failure didn't block
-        assertNotNull(state.getPullRequests());
-        assertEquals(1, state.getPullRequests().size());
-        assertEquals("owner/repoA", state.getPullRequests().get(0).getRepository());
+        @SuppressWarnings("unchecked")
+        List<PullRequest> prs = (List<PullRequest>) result.getOrDefault(AnalysisState.PULL_REQUESTS_KEY, Collections.emptyList());
+        assertNotNull(prs);
+        assertEquals(1, prs.size());
+        assertEquals("owner/repoA", prs.get(0).getRepository());
 
         // TASK-056: Verify PR fetch failure was logged
         List<ILoggingEvent> prLogs = prServiceLogAppender.list;

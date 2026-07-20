@@ -22,18 +22,18 @@ As Features representam capacidades de produto em nível funcional, agrupando PB
 
 | ID | Feature | Prioridade | Status | PBIs relacionados |
 |---|---|---|---|---|---|
-| FEAT-001 | Base Arquitetural do MVP | P0 | Planejada | PBI-001, PBI-004 |
-| FEAT-002 | Configuração da Análise GitHub | P0 | Planejada | PBI-002, PBI-003 |
-| FEAT-003 | Consulta de Entregas Concluídas | P0 | Planejada | PBI-005, PBI-006 |
-| FEAT-004 | Classificação e Cálculo de Métricas | P0 | Planejada | PBI-007, PBI-008, PBI-009 |
-| FEAT-005 | Orquestração do Fluxo com LangGraph4j | P0 | Planejada | PBI-010 |
-| FEAT-006 | Dashboard Web Consolidado | P0 | Planejada | PBI-013, PBI-014, PBI-015, PBI-022 |
-| FEAT-007 | Resumo Executivo com IA | P1 | Planejada | PBI-011, PBI-012, PBI-015 |
-| FEAT-008 | Resiliência, Estados Alternativos e Observabilidade | P1 | Planejada | PBI-016, PBI-017, PBI-018 |
-| FEAT-009 | Qualidade e Validação do MVP | P1 | Planejada | PBI-019, PBI-020, PBI-021 |
-| FEAT-010 | Multi-Repo Support | P0 | Planejada | PBI-023, PBI-024, PBI-025, PBI-026 |
-| FEAT-011 | PR Analytics | P1 | Planejada | PBI-027, PBI-028, PBI-029, PBI-033 |
-| FEAT-012 | Exportação PDF | P1 | Planejada | PBI-030, PBI-031, PBI-032 |
+| FEAT-001 | Base Arquitetural do MVP | P0 | Implementada | PBI-001, PBI-004 |
+| FEAT-002 | Configuração da Análise GitHub | P0 | Implementada | PBI-002, PBI-003 |
+| FEAT-003 | Consulta de Entregas Concluídas | P0 | Implementada | PBI-005, PBI-006 |
+| FEAT-004 | Classificação e Cálculo de Métricas | P0 | Implementada | PBI-007, PBI-008, PBI-009 |
+| FEAT-005 | Orquestração do Fluxo com LangGraph4j | P0 | Implementada | PBI-010 |
+| FEAT-006 | Dashboard Web Consolidado | P0 | Implementada | PBI-013, PBI-014, PBI-015, PBI-022 |
+| FEAT-007 | Resumo Executivo com IA | P1 | Implementada | PBI-011, PBI-012, PBI-015 |
+| FEAT-008 | Resiliência, Estados Alternativos e Observabilidade | P1 | Implementada | PBI-016, PBI-017, PBI-018 |
+| FEAT-009 | Qualidade e Validação do MVP | P1 | Implementada | PBI-019, PBI-020, PBI-021 |
+| FEAT-010 | Multi-Repo Support | P0 | Implementada | PBI-023, PBI-024, PBI-025, PBI-026 |
+| FEAT-011 | PR Analytics | P1 | Implementada | PBI-027, PBI-028, PBI-029, PBI-033 |
+| FEAT-012 | Exportação PDF | P1 | Implementada | PBI-030, PBI-031, PBI-032 |
 | FEAT-013 | Evoluções Futuras | Futuro | Fora do MVP | FUT-001 a FUT-011 |
 
 ---

@@ -71,7 +71,7 @@ public class GitHubIssueService {
             log.debug("Fetching page {} of all issues for {}/{}", page, owner, repo);
             String response;
             try {
-                response = gitHubClient.fetchIssuesForRepo(owner, repo, "all", page, PER_PAGE);
+                response = gitHubClient.fetchIssuesForRepo(owner, repo, "closed", page, PER_PAGE);
             } catch (RuntimeException e) {
                 log.error("GitHub fetch failed at page {} for {}/{}: {}", page, owner, repo, e.getMessage());
                 throw new RuntimeException("Não foi possível consultar os dados do GitHub no momento.", e);
@@ -85,8 +85,9 @@ public class GitHubIssueService {
                 allIssues.append(",");
             }
             // Inject repository field INSIDE each JSON object: replace leading { with {"repository":"owner/repo",
+            // Remove both leading [ and trailing ] from the page response
             String repoField = "\"repository\":\"" + owner + "/" + repo + "\",";
-            String injected = response.substring(1); // remove leading [
+            String injected = response.substring(1, response.length() - 1); // remove [ and ]
             injected = injected.replace("{\"", "{" + repoField + "\"");
             allIssues.append(injected);
             first = false;

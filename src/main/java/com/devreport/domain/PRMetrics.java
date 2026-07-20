@@ -3,7 +3,9 @@ package com.devreport.domain;
 import java.util.Collections;
 import java.util.Map;
 
-public class PRMetrics {
+public class PRMetrics implements java.io.Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final int totalMerged;
     private final int totalAdditions;

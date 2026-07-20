@@ -3,7 +3,9 @@ package com.devreport.domain;
 import java.util.Collections;
 import java.util.List;
 
-public class ChartData {
+public class ChartData implements java.io.Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final List<String> labels;
     private final List<Integer> values;

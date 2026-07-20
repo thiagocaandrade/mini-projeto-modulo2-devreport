@@ -2,12 +2,15 @@ package com.devreport.agent;
 
 import com.devreport.dashboard.DashboardService;
 import com.devreport.domain.DashboardReport;
+import org.bsc.langgraph4j.action.NodeAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 @Component
-public class BuildDashboardNode {
+public class BuildDashboardNode implements NodeAction<AnalysisState> {
 
     private static final Logger log = LoggerFactory.getLogger(BuildDashboardNode.class);
 
@@ -17,13 +20,16 @@ public class BuildDashboardNode {
         this.dashboardService = dashboardService;
     }
 
-    public AnalysisState execute(AnalysisState state) {
+    @Override
+    public Map<String, Object> apply(AnalysisState state) {
         log.info("Building dashboard report");
 
+        String message = state.getMessage();
+
         // Set empty state message when no issues and no errors
-        if (state.getMessage() == null && state.getErrors().isEmpty()) {
+        if (message == null && state.getErrors().isEmpty()) {
             if (state.getMetrics() == null || state.getMetrics().getTotal() == 0) {
-                state.setMessage("Não existem entregas concluídas para o período informado.");
+                message = "Não existem entregas concluídas para o período informado.";
             }
         }
 
@@ -32,15 +38,15 @@ public class BuildDashboardNode {
                 state.getPeriodChart(),
                 state.getCategoryChart(),
                 state.getSummary(),
-                state.getMessage(),
+                message,
                 state.getPrMetrics(),
                 state.getRepositorySummaries(),
                 state.getRepositoriesCount(),
                 state.getPrSizeChart()
         );
 
-        state.setDashboard(report);
         log.info("Dashboard report built successfully");
-        return state;
+        return Map.of(AnalysisState.DASHBOARD_KEY, report,
+                      AnalysisState.MESSAGE_KEY, message != null ? message : "");
     }
 }

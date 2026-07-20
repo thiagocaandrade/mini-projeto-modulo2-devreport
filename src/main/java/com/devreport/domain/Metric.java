@@ -1,6 +1,8 @@
 package com.devreport.domain;
 
-public class Metric {
+public class Metric implements java.io.Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final int total;
     private final int features;

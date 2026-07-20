@@ -4,7 +4,9 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
-public class PullRequest {
+public class PullRequest implements java.io.Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final Long id;
     private final int number;
