@@ -161,6 +161,7 @@ As Tasks foram organizadas para permitir construção incremental, mantendo o si
 | ID | Task | Prioridade | SPEC |
 |---|---|---|---|
 | TASK-059 | Correções finais de encoding, modo mock IA e polimento do MVP | P1 | SPEC-008 |
+| TASK-060 | Implementar README com explicação | P1 | SPEC-008 |
 
 ---
 
@@ -1361,6 +1362,31 @@ As Tasks foram organizadas para permitir construção incremental, mantendo o si
 - Modo mock da IA gera resumo fallback a partir das métricas.
 - Templates dashboard e PDF renderizam sem erros.
 - Dependências no pom.xml estão consolidadas.
+
+---
+
+### TASK-060 - Implementar README com explicação
+
+**Prioridade:** P1
+
+**Specification:** SPEC-008
+
+**Descrição:** Criar e atualizar o README.md do projeto com explicação completa sobre o DevReport: objetivo, arquitetura, stack tecnológica, fluxo do agente LangGraph4j, instruções de execução, funcionalidades do dashboard, testes e estrutura do projeto.
+
+**Resultado esperado:** README.md claro, completo e profissional, servindo como documentação de entrada para novos desenvolvedores e stakeholders.
+
+**Dependências:** TASK-059.
+
+**Verificação:**
+
+- README.md contém seção "Sobre" com objetivo do projeto.
+- README.md contém diagrama de arquitetura e estrutura de pacotes.
+- README.md contém tabela da stack tecnológica.
+- README.md documenta o fluxo do agente LangGraph4j com diagrama e descrição dos 6 nodes.
+- README.md contém instruções de execução com variáveis de ambiente e comandos Maven.
+- README.md lista as funcionalidades do dashboard (Issues, IA, PR Analytics, PDF).
+- README.md contém seção de testes com tabela de cobertura.
+- README.md inclui badges (Java 21, Spring Boot 3.3, licença MIT).
 
 ---
 
